@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "ReactNativ_PokeAPI",
+    "slug": "ReactNativ_PokeAPI",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "ReactNativ_PokeAPI"
+}

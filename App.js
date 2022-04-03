@@ -1,34 +1,53 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+// import axios from 'axios'
+import { StyleSheet, Text, View } from "react-native";
+import PokeAPI from "./components/PokeAPI";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+const getPokemonFromApi = async (id) => {
+  let url ='https://pokeapi.co/api/v2/type/'+id
+  let response = await axios.get(url)
+  return response.data
+}
+
+for (let i = 0; i < 150; i++) {
+  myloop.push(
+    <View key={i}>
+    <Text style={{ textAlign: 'center', marginTop: 5 }} >{i}</Text>
     </View>
   );
 }
 
-const getMoviesFromApi = () => {
-  // La méthode Fetch renverra une promesse qui facilite l'écriture de code qui fonctionne de manière asynchrone
-  // sur le site https://pokeapi.co/docs/v2#pokemon-section, on a le lien pour mettre dans le fetch.
-  return fetch("https://pokeapi.co/api/v2/ability/")
-    .then((response) => response.json())
-    .then((json) => {
-      return json.movies;
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-};
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text>bla</Text>
+      <PokeAPI />
+    </View>
+  );
+}
+
+// constructor(props) {
+//   super(props)
+//   this.state = {
+//     game_indices: [],
+//   }
+//   pokemon={this.state.city
+//}
+
+  var myloop = [];
+
+for (let i = 0; i < 150; i++) {
+  myloop.push(
+    <View key={i}>
+    <Text style={{ textAlign: 'center', marginTop: 5 }} >{i}</Text>
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

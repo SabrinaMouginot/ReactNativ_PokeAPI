@@ -1,5 +1,4 @@
 import axios from "axios";
-// import { API_TOKEN } from '@env'
 
 const sleep = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -10,7 +9,7 @@ async function slowNetwork() {
 
 const getPokemonFromApi = async (id) => {
   await slowNetwork();
-  let url = "https://pokeapi.co/api/v2/type/" + id;
+  let url = "https://pokeapi.co/api/v2/type/${i}" + id;
   let response = await axios.get(url);
   console.log("--getPokemonFromApi--");
   console.log(url);

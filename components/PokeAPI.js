@@ -7,7 +7,7 @@ function Pokemon() {
   // Avec [] , useEffect est appliqué une qeule fois ( comme componentDidMount )
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon/${i}")
+    fetch("https://pokeapi.co/api/v2/pokemon/$`i`")
       //fetch() récupére les ressources à travers le réseau de manière asynchrone.
       .then((res) => res.json())
       .then(
@@ -29,7 +29,7 @@ function Pokemon() {
       return id;
     }
 
-    let url = "https://pokeapi.co/api/v2/pokemon/${i}" + id;
+    let url = "https://pokeapi.co/api/v2/pokemon/$`i`" + id;
     return url;
   }
 

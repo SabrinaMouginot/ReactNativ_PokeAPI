@@ -33,8 +33,6 @@ function Pokemon() {
     return url;
   }
 
-  console.log(url);
-
   if (error) {
     return <div>Erreur : {error.message}</div>;
   } else if (!isLoaded) {

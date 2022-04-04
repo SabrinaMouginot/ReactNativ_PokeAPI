@@ -1,14 +1,14 @@
-// import axios from 'axios'
+// import axios from 'axios';
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import PokeAPI from "./components/PokeAPI";
 
-  var myloop = [];
+var myloop = [];
 
 for (let i = 0; i < 150; i++) {
   myloop.push(
     <View key={i}>
-    <Text style={{ textAlign: 'center', marginTop: 5 }} >{i}</Text>
+      <Text style={{ textAlign: "center", marginTop: 5 }}>{i}</Text>
     </View>
   );
 }
@@ -31,7 +31,7 @@ const getPokemonFromApi = async (id) => {
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>bla</Text>
+      <Text>Liste Pokemon</Text>
       <PokeAPI />
     </View>
   );

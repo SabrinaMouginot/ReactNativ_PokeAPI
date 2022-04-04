@@ -7,12 +7,12 @@ function Pokemon() {
   // Avec [] , useEffect est appliqué une qeule fois ( comme componentDidMount )
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon/$`i`")
+    fetch("url")
       //fetch() récupére les ressources à travers le réseau de manière asynchrone.
+      // Une fonction est aynchrone parce qu'lle s'exécute grâce à une boucle d'évènement en utilisant une promesse ( Promise ) comme valeur de retour
       .then((res) => res.json())
       .then(
         (result) => {
-          console.log(result.name);
           setIsLoaded(true);
           setItems(result);
         },
@@ -22,21 +22,21 @@ function Pokemon() {
         }
       );
   }, []);
-  
+
   function urlPokemon() {
-    for (let i = 0; i < 150; i++) {
+    for (let i = 0; i < 150; i++) { //Une boucle for jusqu'à 150
       let id = id++;
       return id;
     }
 
-    let url = "https://pokeapi.co/api/v2/pokemon/$`i`" + id;
+    let url = `https://pokeapi.co/api/v2/pokemon/${i}` + id;
     return url;
   }
 
   if (error) {
     return <div>Erreur : {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Chargement...</div>;
+    return <div>Loading...</div>;
   } else {
     return (
       <ul>

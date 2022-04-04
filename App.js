@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 });
 
 const getPokemonFromApi = async (id) => {
-  let url = "https://pokeapi.co/api/v2/type/$`i`" + id;
+  let url = "https://pokeapi.co/api/v2/type/${i}" + id;
   let response = await axios.get(url);
   return response.data;
 };

@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const getPokemonFromApi = async (id) => {
-  let url = "https://pokeapi.co/api/v2/type/${i}" + id;
+const getPokemonFromApi = async () => {
+  let url = "https://pokeapi.co/api/v2/pokemon/type/?limit=150";
   let response = await axios.get(url);
   return response.data;
 };
